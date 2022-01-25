@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Zadinga_Test_Suite]">
+  <test thread-count="5" name="New User Registration(failed)">
+    <classes>
+      <class name="com.nf.mobile.web.hybrid.resources.Registration">
+        <methods>
+          <include name="testApp" invocation-numbers="1 2"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- com.nf.mobile.web.hybrid.resources.Registration -->
+    </classes>
+  </test> <!-- New User Registration(failed) -->
+  <test thread-count="5" name="Readymade Catalog(failed)">
+    <classes>
+      <class name="com.nf.mobile.web.hybrid.resources.Readymade_Catalog">
+        <methods>
+          <include name="testApp" invocation-numbers="1"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- com.nf.mobile.web.hybrid.resources.Readymade_Catalog -->
+    </classes>
+  </test> <!-- Readymade Catalog(failed) -->
+  <test thread-count="5" name="Manual product addition(failed)">
+    <classes>
+      <class name="com.nf.mobile.web.hybrid.resources.Add_Products_Manually">
+        <methods>
+          <include name="testApp" invocation-numbers="1"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- com.nf.mobile.web.hybrid.resources.Add_Products_Manually -->
+    </classes>
+  </test> <!-- Manual product addition(failed) -->
+  <test thread-count="5" name="Start_Delivery(failed)">
+    <classes>
+      <class name="com.nf.mobile.web.hybrid.resources.Start_Delivery">
+        <methods>
+          <include name="testApp" invocation-numbers="0"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- com.nf.mobile.web.hybrid.resources.Start_Delivery -->
+    </classes>
+  </test> <!-- Start_Delivery(failed) -->
+</suite> <!-- Failed suite [Zadinga_Test_Suite] -->

@@ -1,0 +1,49 @@
+<suite name="Zadinga_Test_Suite">
+	<test name="New User Registration" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Registration" />
+		</classes>
+	</test>
+	<test name="Readymade Catalog" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Readymade_Catalog" />
+		</classes>
+	</test>
+	<test name="Manual product addition" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Add_Products_Manually" />
+		</classes>
+	</test>
+	<test name="Create online store" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Create_Online_Store" />
+		</classes>
+	</test>	
+		<test name="Add_Product_By_Barcode_scanning" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Add_Product_By_Barcode_scanning" />
+		</classes>
+	</test>	
+		<test name="ShopBills_ByScanningProduct" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.ShopBills_ByScanningProduct" />
+		</classes>
+	</test>	
+	<test name="Setup payments" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Setup_Payments" />
+		</classes>
+	</test>
+		<test name="AllowCheckout_OnlineStore" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Allow_Checkout" />
+		</classes>
+	</test>	
+	<test name="Start_Delivery" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Start_Delivery" />
+		</classes>
+	</test>
+	
+</suite>
+

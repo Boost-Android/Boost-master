@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-01-25T18:22:15 IST" name="Default suite" finished-at="2022-01-25T18:22:43 IST" duration-ms="27472">
+    <groups>
+    </groups>
+    <test started-at="2022-01-25T18:22:15 IST" name="Default test" finished-at="2022-01-25T18:22:43 IST" duration-ms="27472">
+      <class name="com.nf.mobile.web.hybrid.resources.Login">
+        <test-method signature="testApp(java.util.Hashtable)[pri:0, instance:com.nf.mobile.web.hybrid.resources.Login@66238be2]" started-at="2022-01-25T18:22:15 IST" name="testApp" data-provider="getData" finished-at="2022-01-25T18:22:42 IST" duration-ms="26825" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Username=doctors, Password=nf2020, Runmode=Y}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApp -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.nf.mobile.web.hybrid.resources.Login@66238be2]" started-at="2022-01-25T18:22:42 IST" name="quit" finished-at="2022-01-25T18:22:43 IST" duration-ms="603" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com.nf.mobile.web.hybrid.resources.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

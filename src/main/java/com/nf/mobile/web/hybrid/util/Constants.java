@@ -40,7 +40,7 @@ public class Constants {
 	
 	public static final String PROPERTIES_FILE_Doctors="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\doctors_FP\\project.properties";
 	public static final String PROPERTIES_FILE_Clinics="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\clinics_FP\\project.properties";
-	public static final String PROPERTIES_FILE_Education="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\education_FP\\project.properties";
+	public static final String PROPERTIES_FILE_Education="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\clinics_FP\\project.properties";
 }
 
 	

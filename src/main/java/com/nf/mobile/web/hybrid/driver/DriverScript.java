@@ -20,7 +20,7 @@ public class DriverScript {
 	public void executeKeywords(String testUnderExecution, Hashtable<String,String> testData) throws IOException, InterruptedException {
 
 		String keywords_sheet = "Keywords";
-		Xls_Reader xls = new Xls_Reader(Constants.DATA_XLSX);
+		Xls_Reader xls = new Xls_Reader(Constants.DATA_XLSX_Doctors);
 		int rows = xls.getRowCount(keywords_sheet);
 
 
@@ -97,12 +97,11 @@ public class DriverScript {
 				{
 					execution_result=keywords.RareActions(object);
 				}
-				/*
-				else if(keyword.equals("getActivityName"))
+				else if(keyword.equals("tapByCoordinates"))
 				{
-					execution_result=keywords.getActivityName();
+					execution_result=keywords.tapByCoordinates(90,1702);
 
-				}*/
+				}
 
 				//test.log(LogStatus.INFO, "Execution Result for test step  "  + " : " + description + " : " + "   is   :  " + execution_result);
 				if(execution_result.equals(Constants.PASS)) {

@@ -10,15 +10,12 @@ import java.time.Duration;
 //import java.nio.file.Path;
 //import java.nio.file.Paths;
 import java.util.Date;
-import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 //import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
@@ -35,20 +32,29 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import io.appium.java_client.MobileBy;
+//import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 //import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.remote.MobileCapabilityType;
 //import io.appium.java_client.screenrecording.CanRecordScreen;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
-//import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base64;
+import net.sourceforge.tess4j.ITesseract;
+import net.sourceforge.tess4j.Tesseract;
+import net.sourceforge.tess4j.TesseractException;
+
+import static io.appium.java_client.touch.TapOptions.tapOptions;
+import static io.appium.java_client.touch.WaitOptions.waitOptions;
+import static io.appium.java_client.touch.offset.ElementOption.element;
+import static io.appium.java_client.touch.offset.PointOption.point;
+import static java.time.Duration.ofMillis;
+import static java.time.Duration.ofSeconds;
+
 
 public class GenericKeywords<AndroidElement> {
 
@@ -61,7 +67,8 @@ public class GenericKeywords<AndroidElement> {
 	public GenericKeywords(ExtentTest test) {
 		this.test=test;
 	}
-
+	
+	
 	/*------------------------------------------------Launch App -------------------------------------------------*/
 
 
@@ -70,7 +77,7 @@ public class GenericKeywords<AndroidElement> {
 		test.log(LogStatus.INFO, "opening the app for the given apk file : " + apkfile);
 
 		prop = new Properties();
-		String path = Constants.PROPERTIES_FILE;
+		String path = Constants.PROPERTIES_FILE_Doctors;
 
 		try
 		{
@@ -101,7 +108,102 @@ public class GenericKeywords<AndroidElement> {
 		return Constants.PASS;
 	}
 
+	/*----------------------------------------------------------------------------readToastMessage---------------------------------------------------------------------*/
+	
+	public String readToastMessage(String locatorKey) throws IOException, InterruptedException {
+		String result = Constants.FAIL;
+				WebElement e;
+		WebDriverWait allwait = new WebDriverWait(aDriver, 10);
+		allwait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty(locatorKey))));
+		e = (WebElement) aDriver.findElement(By.xpath(prop.getProperty(locatorKey)));
+		e.click(); //click on add product button
+		
+		//take screenshot multiple times
+		Date d = new Date();
+		String screenshotFile_one=d.toString().replace(":", "_").replace(" ","_")+"first.png";
+		//String path = Constants.toast_screens+screenshotFile_one;
+		String path = "C:\\ToastScreens\\first.png";
+		File scrFile = ((TakesScreenshot)aDriver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(scrFile, new File(path));
+		} catch (IOException e2) {
+			e2.printStackTrace();
+		}
+	
+		String screenshotFile_a=d.toString().replace(":", "_").replace(" ","_")+"second.png";
+		String path_a = Constants.toast_screens+screenshotFile_a;
+		//String path_a = "C:\\ToastScreens\\second.png";
+		File scrFile_a = ((TakesScreenshot)aDriver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(scrFile_a, new File(path_a));
+		} catch (IOException e2) {
+			e2.printStackTrace();
+		}
+		
+		String screenshotFile_b=d.toString().replace(":", "_").replace(" ","_")+"third.png";
+		//String path_b = Constants.toast_screens+screenshotFile_b;
+		String path_b = "C:\\ToastScreens\\third.png";
+		File scrFile_b = ((TakesScreenshot)aDriver).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(scrFile_b, new File(path_b));
+		} catch (IOException e2) {
+			e2.printStackTrace();
+		}
+	
+		
+		ITesseract image = new Tesseract();
+try {
+	//we are reading text from each image file
+	//image.setDatapath(Constants.tessdata);
+	image.setDatapath("C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\tessdata");
+	image.setLanguage("eng");
+	String textOfFirstImage = image.doOCR(scrFile);
+	//String textOfFirstImage = image.doOCR(new File(path));
+	System.out.println("Text read from first image is: " + textOfFirstImage);
+	test.log(LogStatus.INFO, "Text read from first image is: " + textOfFirstImage);
+	
+	String textOfSecondImage = image.doOCR(scrFile_a);
+	System.out.println("Text read from second image is: " + textOfSecondImage);
+	test.log(LogStatus.INFO, "Text read from second image is:  " + textOfSecondImage);
 
+	String textOfThirdImage = image.doOCR(scrFile_b);
+	System.out.println("Text read from third image is: " + textOfThirdImage);
+	test.log(LogStatus.INFO, "Text read from third image is:  " + textOfThirdImage);
+	
+	if(textOfFirstImage.contains("succesful_message"))
+	{
+		System.out.println("toast captured in first image");
+		test.log(LogStatus.INFO, "toast captured in first image");
+		result = Constants.PASS;
+	}
+	else if(textOfSecondImage.contains("1 Product added to the inventory"))
+	{
+		System.out.println("toast captured in second image");
+		test.log(LogStatus.INFO, "toast captured in second image");
+		result = Constants.PASS;
+	}
+	else if(textOfThirdImage.contains("1 Product added to the inventory"))
+	{
+		System.out.println("toast captured in third image");
+		test.log(LogStatus.INFO, "toast captured in third image");
+		result = Constants.PASS;
+	}
+	else
+	{
+		result = Constants.FAIL;
+		test.log(LogStatus.INFO, "toast message wasn't triggered");
+	}
+	
+} 
+catch (TesseractException e1) {
+	e1.printStackTrace();
+	result = Constants.FAIL;
+	System.out.println("Exception :  " + e1.getMessage());
+}
+
+return result;
+	}
+	
 	/*------------------------------------------------Click Action-------------------------------------------------*/
 
 
@@ -393,11 +495,14 @@ return Constants.PASS;
 		
 		
 			
-		Dimension dim = aDriver.manage().window().getSize();
-		int width = dim.width;
+		Dimension dim = aDriver.manage().window().getSize(); 
+		aDriver.getDisplayDensity();
+	    int width = dim.width;
 		int height = dim.height;
+		long dpi = aDriver.getDisplayDensity();
 		System.out.println("Width - "+ width);
 		System.out.println("Height - "+ height);
+		System.out.println("Den - "+ dpi);
 		
 		
 		int middleX = width/2;
@@ -500,8 +605,20 @@ public String RareActions(String locatorkey) throws InterruptedException, IOExce
 		//reportFailure("Test failed   " + ex.getMessage() );
 	}
 return Constants.PASS;
+
+
 		}
-	
+/*----------------------------------------------------------------------XY Coordinates---------------------------------------------------------------------------------------------------------*/
+
+
+public String tapByCoordinates (int x,  int y) {
+	new TouchActions(aDriver).down(90, 1702).perform();
+//    new TouchAction(aDriver)
+//        .tap(point(200,1702))
+//        .waitAction(waitOptions(ofMillis(250))).perform();
+    return Constants.PASS;
+            
+}	
 /*----------------------------------------------------------------------PressAndroidbackbutton---------------------------------------------------------------------------------------------------------*/
 
 public String PressAndroidbackbutton()

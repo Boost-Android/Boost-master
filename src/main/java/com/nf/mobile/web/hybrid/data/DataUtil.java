@@ -11,9 +11,9 @@ public class DataUtil {
 
 
 		String sheetName=Constants.DATA_SHEET;
-		//String testCaseName="Registration";
+		
 		String testCaseName=testName;
-		// reads data for only testCaseName
+		
 		
 		int testStartRowNum=1;
 		while(!xls.getCellData(sheetName, 0, testStartRowNum).equals(testCaseName)){

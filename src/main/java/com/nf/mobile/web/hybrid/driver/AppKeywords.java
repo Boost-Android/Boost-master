@@ -13,7 +13,6 @@ public class AppKeywords extends GenericKeywords{
 		System.out.println("doing some specific action in app");
 		return Constants.PASS;
 	}
-		
-
 	
 }
+		

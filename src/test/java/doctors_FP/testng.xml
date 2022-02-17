@@ -1,0 +1,27 @@
+<suite name="Boost-master">
+
+    	<test name="Login" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Login" />
+		</classes>
+	</test>
+	<test name="Custom_Page" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Custom_Page" />
+		</classes>
+	</test>
+	
+	<test name="Delete_Photo" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Delete_Photo" />
+		</classes>
+	</test>
+	
+	<test name="Post_New_Photo" allow-return-values="true">
+		<classes>
+			<class name="com.nf.mobile.web.hybrid.resources.Post_New_Photo" />
+		</classes>
+
+	</test>	
+	
+</suite>

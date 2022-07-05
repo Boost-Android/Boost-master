@@ -2,28 +2,29 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-17T12:22:43 IST" name="Default suite" finished-at="2022-02-17T12:23:19 IST" duration-ms="36233">
+  <suite started-at="2022-07-05T17:48:24 IST" name="Default suite" finished-at="2022-07-05T17:48:49 IST" duration-ms="25378">
     <groups>
     </groups>
-    <test started-at="2022-02-17T12:22:43 IST" name="Default test" finished-at="2022-02-17T12:23:19 IST" duration-ms="36233">
-      <class name="education_FP.Delete_Photo">
-        <test-method signature="testApp(java.util.Hashtable)[pri:0, instance:education_FP.Delete_Photo@3c291aad]" started-at="2022-02-17T12:22:43 IST" name="testApp" data-provider="getData" finished-at="2022-02-17T12:23:19 IST" duration-ms="35614" status="FAIL">
+    <test started-at="2022-07-05T17:48:24 IST" name="Default test" finished-at="2022-07-05T17:48:49 IST" duration-ms="25378">
+      <class name="doctors_FP.Features_website">
+        <test-method signature="testApp(java.util.Hashtable)[pri:0, instance:doctors_FP.Features_website@751e664e]" started-at="2022-07-05T17:48:24 IST" name="testApp" data-provider="getData" finished-at="2022-07-05T17:48:49 IST" duration-ms="25115" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Runmode=Y}]]>
+                <![CDATA[{Title=, Runmode=Y, Description=}]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "com.nf.mobile.web.hybrid.driver.GenericKeywords.getElement(String)" is null]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "this.aDriver" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because the return value of "com.nf.mobile.web.hybrid.driver.GenericKeywords.getElement(String)" is null
-at com.nf.mobile.web.hybrid.driver.GenericKeywords.clicking(GenericKeywords.java:213)
-at com.nf.mobile.web.hybrid.driver.DriverScript.executeKeywords(DriverScript.java:54)
-at education_FP.Delete_Photo.testApp(Delete_Photo.java:45)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "this.aDriver" is null
+at com.nf.mobile.web.hybrid.driver.GenericKeywords.takeScreenshot(GenericKeywords.java:355)
+at com.nf.mobile.web.hybrid.driver.GenericKeywords.reportPass(GenericKeywords.java:337)
+at com.nf.mobile.web.hybrid.driver.DriverScript.executeKeywords(DriverScript.java:117)
+at doctors_FP.Features_website.testApp(Features_website.java:45)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -58,11 +59,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testApp -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:education_FP.Delete_Photo@3c291aad]" started-at="2022-02-17T12:23:19 IST" name="quit" finished-at="2022-02-17T12:23:19 IST" duration-ms="564" status="PASS">
+        <test-method is-config="true" signature="quit()[pri:0, instance:doctors_FP.Features_website@751e664e]" started-at="2022-07-05T17:48:49 IST" name="quit" finished-at="2022-07-05T17:48:49 IST" duration-ms="219" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-      </class> <!-- education_FP.Delete_Photo -->
+      </class> <!-- doctors_FP.Features_website -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

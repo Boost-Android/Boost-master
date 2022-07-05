@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="education_FP.Delete_Photo">
+      <class name="doctors_FP.Features_website">
         <methods>
-          <include name="quit"/>
           <include name="testApp" invocation-numbers="0"/>
+          <include name="quit"/>
         </methods>
-      </class> <!-- education_FP.Delete_Photo -->
+      </class> <!-- doctors_FP.Features_website -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

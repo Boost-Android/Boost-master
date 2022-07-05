@@ -1,34 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Boost-master]">
-  <test thread-count="5" name="Login(failed)">
+<suite name="Failed suite [Boost-master]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="doctors_FP(failed)">
     <classes>
-      <class name="com.nf.mobile.web.hybrid.resources.Login">
+      <class name="doctors_FP.Post_today_update">
         <methods>
           <include name="testApp" invocation-numbers="0"/>
           <include name="quit"/>
         </methods>
-      </class> <!-- com.nf.mobile.web.hybrid.resources.Login -->
-    </classes>
-  </test> <!-- Login(failed) -->
-  <test thread-count="5" name="Custom_Page(failed)">
-    <classes>
-      <class name="com.nf.mobile.web.hybrid.resources.Custom_Page">
+      </class> <!-- doctors_FP.Post_today_update -->
+      <class name="doctors_FP.Custom_Page">
         <methods>
-          <include name="testApp" invocation-numbers="0"/>
           <include name="quit"/>
-        </methods>
-      </class> <!-- com.nf.mobile.web.hybrid.resources.Custom_Page -->
-    </classes>
-  </test> <!-- Custom_Page(failed) -->
-  <test thread-count="5" name="Post_New_Photo(failed)">
-    <classes>
-      <class name="com.nf.mobile.web.hybrid.resources.Post_New_Photo">
-        <methods>
           <include name="testApp" invocation-numbers="0"/>
-          <include name="quit"/>
         </methods>
-      </class> <!-- com.nf.mobile.web.hybrid.resources.Post_New_Photo -->
+      </class> <!-- doctors_FP.Custom_Page -->
     </classes>
-  </test> <!-- Post_New_Photo(failed) -->
+  </test> <!-- doctors_FP(failed) -->
 </suite> <!-- Failed suite [Boost-master] -->

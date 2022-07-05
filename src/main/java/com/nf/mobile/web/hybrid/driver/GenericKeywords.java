@@ -259,7 +259,28 @@ return result;
 		((WebElement) getElement(locatorKey)).sendKeys(data);	
 		return Constants.PASS;
 	}
+	
 
+/*---------------------clear content of input field-----------------------------------------------*/
+	
+	public String app_clearContent(String object) throws IOException, InterruptedException {
+		String result = Constants.FAIL;
+		try{
+			
+		((WebElement) getElement(object)).clear();
+		result = Constants.PASS;
+		}
+		catch(Exception ex)
+		{
+			takeScreenshot(Constants.FAIL);
+			test.log(LogStatus.FAIL, ex.getMessage());
+			result = Constants.FAIL;
+			Assert.fail();
+			
+		}
+		return result;
+	}
+	
 
 	/*------------------------------------------------ Verify Text-------------------------------------------------*/
 
@@ -608,17 +629,26 @@ return Constants.PASS;
 
 
 		}
+
+public int[] clickBottomNavItem(int itemPosition) {
+	
+	return null;
+}
 /*----------------------------------------------------------------------XY Coordinates---------------------------------------------------------------------------------------------------------*/
 
 
 public String tapByCoordinates (int x,  int y) {
-	new TouchActions(aDriver).down(90, 1702).perform();
-//    new TouchAction(aDriver)
-//        .tap(point(200,1702))
-//        .waitAction(waitOptions(ofMillis(250))).perform();
+	//new TouchActions(aDriver).down(117, 1917).perform();
+    new TouchAction(aDriver)
+        .tap(point(332,1747))
+        .waitAction(waitOptions(ofMillis(250))).perform();
     return Constants.PASS;
             
 }	
+
+
+/*----------------------------------------------------------------------clickBottomNavItem---------------------------------------------------------------------------------------------------------*/
+
 /*----------------------------------------------------------------------PressAndroidbackbutton---------------------------------------------------------------------------------------------------------*/
 
 public String PressAndroidbackbutton()

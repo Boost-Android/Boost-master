@@ -23,7 +23,7 @@ public class Delete_Photo {
 	ExtentTest test = report.startTest("Delete_Photo");
 	DriverScript ds;
 	String testCaseName="Delete_Photo";//TEST CASE FOR WHICH THE DATA HAS TO BE READ
-	Xls_Reader xls = new Xls_Reader(Constants.DATA_XLSX_Doctors);
+	Xls_Reader xls = new Xls_Reader(Constants.DATA_XLSX_Clinics);
 	
 	@Test(dataProvider="getData")
 	public void testApp(Hashtable<String,String> data) throws IOException, InterruptedException {
@@ -42,7 +42,7 @@ public class Delete_Photo {
 		
 
 		ds = new DriverScript(test);
-		ds.executeKeywords(testCaseName,data); //passing the testcase that needs to be executed
+		ds.executeKeywords(testCaseName,data, Constants.DATA_XLSX_Doctors); //passing the testcase that needs to be executed
 		
 		test.log(LogStatus.INFO, "Ending the test" + testCaseName);
 		//ds.getKeywords().reportPass("Test Passed");

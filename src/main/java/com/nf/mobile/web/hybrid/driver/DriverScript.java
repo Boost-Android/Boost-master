@@ -17,21 +17,26 @@ public class DriverScript {
 		keywords =  new AppKeywords(test);
 	}
 
-	public void executeKeywords(String testUnderExecution, Hashtable<String,String> testData) throws IOException, InterruptedException {
+	public void executeKeywords(String testUnderExecution, Hashtable<String,String> testData, String filename ) throws IOException, InterruptedException {
 
 		String keywords_sheet = "Keywords";
-		Xls_Reader xls = new Xls_Reader(Constants.DATA_XLSX_Doctors);
+		Xls_Reader xls = new Xls_Reader(filename);
 		int rows = xls.getRowCount(keywords_sheet);
+		int count=0;
 
 
 		//reading data from Data sheet_________________________________________________________________________________________
 		for(int rnum=2; rnum <=rows; rnum++) {
-
+			
 			String tcid = xls.getCellData(keywords_sheet, Constants.TCID_COL , rnum);
 
 			if(tcid.equals(testUnderExecution)) {
+				
+				System.out.println("XYZ" + count);
+				count++;
 
 				String description = xls.getCellData(keywords_sheet, Constants.DESCRIPTION_COL , rnum);
+				String viewType = xls.getCellData(keywords_sheet,Constants.VIEWTYPE_COL, rnum);
 				String keyword = xls.getCellData(keywords_sheet, Constants.KEYWORD_COL , rnum);
 				String object = xls.getCellData(keywords_sheet, Constants.OBJECT_COL , rnum);
 				String dataKey = xls.getCellData(keywords_sheet, Constants.DATA_COL , rnum);
@@ -56,6 +61,10 @@ public class DriverScript {
 				else if(keyword.equalsIgnoreCase("type"))
 				{
 					execution_result=keywords.type(object,testData.get(dataKey));
+				}
+				else if(keyword.equalsIgnoreCase("app_clearContent"))
+				{
+					execution_result=keywords.app_clearContent(object);
 				}
 				else if(keyword.equalsIgnoreCase("closeApp"))
 				{
@@ -99,7 +108,7 @@ public class DriverScript {
 				}
 				else if(keyword.equals("tapByCoordinates"))
 				{
-					execution_result=keywords.tapByCoordinates(90,1702);
+					execution_result=keywords.tapByCoordinates(117,1917);
 
 				}
 

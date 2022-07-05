@@ -42,7 +42,7 @@ public class videoConsultation {
 		
 
 		ds = new DriverScript(test);
-		ds.executeKeywords(testCaseName,data); //passing the testcase that needs to be executed
+		ds.executeKeywords(testCaseName,data, Constants.DATA_XLSX_Doctors); //passing the testcase that needs to be executed
 		
 		test.log(LogStatus.INFO, "Ending the test" + testCaseName);
 		//ds.getKeywords().reportPass("Test Passed");

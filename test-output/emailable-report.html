@@ -9,14 +9,15 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">36,233</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">25,378</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">education_FP.Delete_Photo</td><td><a href="#m0">testApp</a></td><td rowspan="1">1645080763428</td><td rowspan="1">35614</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">doctors_FP.Features_website</td><td><a href="#m0">testApp</a></td><td rowspan="1">1657023504583</td><td rowspan="1">25115</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">education_FP.Delete_Photo#testApp</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{Runmode=Y}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because the return value of &quot;com.nf.mobile.web.hybrid.driver.GenericKeywords.getElement(String)&quot; is null
-	at com.nf.mobile.web.hybrid.driver.GenericKeywords.clicking(GenericKeywords.java:213)
-	at com.nf.mobile.web.hybrid.driver.DriverScript.executeKeywords(DriverScript.java:54)
-	at education_FP.Delete_Photo.testApp(Delete_Photo.java:45)
+<h2>Default test</h2><h3 id="m0">doctors_FP.Features_website#testApp</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{Title=, Runmode=Y, Description=}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)&quot; because &quot;this.aDriver&quot; is null
+	at com.nf.mobile.web.hybrid.driver.GenericKeywords.takeScreenshot(GenericKeywords.java:355)
+	at com.nf.mobile.web.hybrid.driver.GenericKeywords.reportPass(GenericKeywords.java:337)
+	at com.nf.mobile.web.hybrid.driver.DriverScript.executeKeywords(DriverScript.java:117)
+	at doctors_FP.Features_website.testApp(Features_website.java:45)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

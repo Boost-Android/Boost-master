@@ -20,6 +20,7 @@ public class Constants {
 	public static final String PASS_WEB = "Selenium Test successfull";
 	public static final String FAIL_WEB = "Selenium Test Failed";
 	public static final String APK = "Boost_apk_file";
+	public static final String VIEWTYPE_COL = "CustomView";
 	
 	
 	//Ankita's device constants
@@ -28,7 +29,7 @@ public class Constants {
 	public static final String REPORT_PATH ="C:\\report\\";
 	public static final String Successfull_tests_screens ="C:\\report\\Success\\";
 	public static final String failed_tests_screens ="C:\\report\\Failure\\";
-	public static final String APK_FILE_PATH="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\apks\\NF-Boost-disable_webengage-6.0.13_211119.1746.apk";
+	public static final String APK_FILE_PATH="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\apks\\NF-Boost-partoneDebug-6.0.21.1.apk";
 	public  static final String APPIUM_PATH="C:\\Users\\NowFloats\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js";
 	public  static final String NODEJS_PATH="C:\\Program Files\\nodejs\\node.exe";
 	//public static final String ChromeDriverLoc = "C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\Drivers\\chromedriver.exe";
@@ -37,10 +38,16 @@ public class Constants {
 	public static final String DATA_XLSX_Doctors="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\main\\java\\com\\nf\\mobile\\web\\hybrid\\data\\Doctors_Data.xlsx";
 	public static final String DATA_XLSX_Clinics="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\main\\java\\com\\nf\\mobile\\web\\hybrid\\data\\Clinics_Data.xlsx";
 	public static final String DATA_XLSX_Education="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\main\\java\\com\\nf\\mobile\\web\\hybrid\\data\\Education_Data.xlsx";
+	public static final String DATA_XLSX_Manufacturing="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\main\\java\\com\\nf\\mobile\\web\\hybrid\\data\\Manufacturing_Data.xlsx";
+	public static final String DATA_XLSX_Economyhotels="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\main\\java\\com\\nf\\mobile\\web\\hybrid\\data\\Economyhotels_Data.xlsx";
 	
 	public static final String PROPERTIES_FILE_Doctors="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\doctors_FP\\project.properties";
 	public static final String PROPERTIES_FILE_Clinics="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\clinics_FP\\project.properties";
-	public static final String PROPERTIES_FILE_Education="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\clinics_FP\\project.properties";
+	public static final String PROPERTIES_FILE_Education="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\education_FP\\project.properties";
+	public static final String PROPERTIES_FILE_Manufacturing="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\manufacturing_FP\\project.properties";
+	public static final String PROPERTIES_FILE_Economyhotels="C:\\Users\\NowFloats\\eclipse-workspace\\Boost-master\\src\\test\\java\\economyhotels_FP\\project.properties";
+	
+
 }
 
 	

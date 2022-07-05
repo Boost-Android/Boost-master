@@ -1,27 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Boost-master">
+	 
+  <test name="clinics_FP">
 
-    	<test name="Login" allow-return-values="true">
-		<classes>
-			<class name="com.nf.mobile.web.hybrid.resources.Login" />
-		</classes>
-	</test>
-	<test name="Custom_Page" allow-return-values="true">
-		<classes>
-			<class name="com.nf.mobile.web.hybrid.resources.Custom_Page" />
-		</classes>
-	</test>
-	
-	<test name="Delete_Photo" allow-return-values="true">
-		<classes>
-			<class name="com.nf.mobile.web.hybrid.resources.Delete_Photo" />
-		</classes>
-	</test>
-	
-	<test name="Post_New_Photo" allow-return-values="true">
-		<classes>
-			<class name="com.nf.mobile.web.hybrid.resources.Post_New_Photo" />
-		</classes>
+      <groups>
+   		<dependencies>
+	  	
 
-	</test>	
-	
+	    </dependencies>
+	  </groups>
+	<classes>
+			 <class name="clinics_FP.Addpatienttestimonial" />
+			<class name="clinics_FP.Post_New_Photo" />
+		     <class name="clinics_FP.Delete_Photo" />			
+	</classes>
+  </test>
 </suite>
+   			
